@@ -33,6 +33,16 @@ def test_login_exitoso():
     titulo = driver.find_element(By.CSS_SELECTOR, ".header_label > .app_logo").text
     assert titulo == "Swag Labs"
 
+    # Verificar filtros
+    filtros = driver.find_element(By.CLASS_NAME, "product_sort_container")
+    assert filtros.is_displayed()
+
+    #verificar Boton Hamburgesa 
+    menu = driver.find_element(By.ID, "shopping_cart_container")
+    assert menu.is_displayed()
+
+
+
     # Encontrar productos
     products = driver.find_elements(By.CLASS_NAME, "inventory_item")
 
@@ -44,6 +54,7 @@ def test_login_exitoso():
 
     # Mostrar precio del primer producto
     print("El precio del primer producto es:", products[0].find_element(By.CLASS_NAME, "inventory_item_price").text)
+    
 
     # Esperar tiempo
     time.sleep(2)
