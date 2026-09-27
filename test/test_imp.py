@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
@@ -26,6 +28,9 @@ def test_login_exitoso():
     # Click en Login
     button.click()
 
+    # Esperar hasta que aparezca el logo
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".header_label > .app_logo")))
+    
     # Verificar URL
     assert driver.current_url == "https://www.saucedemo.com/inventory.html"
 
@@ -49,29 +54,40 @@ def test_login_exitoso():
     # Mostrar cantidad de productos
     print(f"Se encontraron {len(products)} productos.")
 
-    # Mostrar nombre del primer producto
-    print("El primer producto es:", products[0].find_element(By.CLASS_NAME, "inventory_item_name").text)
+    # Mostrar y guardar el nombre del primer producto
+    first_product_name = products[0].find_element(By.CLASS_NAME, 'inventory_item_name').text
+    print("El primer producto es:", first_product_name)
 
     # Mostrar precio del primer producto
     print("El precio del primer producto es:", products[0].find_element(By.CLASS_NAME, "inventory_item_price").text)
     
     #click añadir al carrito el primer producto
     products[0].find_element(By.ID, 'add-to-cart-sauce-labs-backpack').click()
+    
+    print(f'El primer producto agregado al carrito es: {first_product_name}')
 
     #Chekear que el carrito tiene 1 producto
     cart = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
     print(f'El carrito tiene {cart} productos.')
     assert cart == '1'
-    time.sleep(2)
 
     #Entrar a la pagina del carrito
     driver.find_element(By.CLASS_NAME, 'shopping_cart_link').click()
 
+    # Verificar que estamos en la pagina del carrito
+    assert driver.current_url == "https://www.saucedemo.com/cart.html"
+
+    # Esperar hasta que aparezca el producto en el carrito
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'cart_item')))
+
     #Verificar el numero de productos en la web del carrito
-    cart_items = driver.find_elements(By.CLASS_NAME, 'cart_list')
+    cart_items = driver.find_elements(By.CLASS_NAME, 'cart_item')
     print(f'El carrito en su web tiene {len(cart_items)} productos.')
 
-
+    #Verificar que el primer producto agregado al carrito es el mismo que el primer producto en el carrito web
+    print("el primer producto en la pagina del carrito es: ", cart_items[0].find_element(By.CLASS_NAME, 'inventory_item_name').text)
+    #assert cart_items[0].find_element(By.CLASS_NAME, 'inventory_item_name').text == first_product_name
+    
     # Esperar tiempo
     time.sleep(2)
 
