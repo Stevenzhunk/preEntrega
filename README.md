@@ -61,9 +61,9 @@ Se verifica:
 
 El proyecto utiliza las siguientes dependencias de Python:
 
-pytest
-selenium
-pytest-html
+- pytest
+- selenium
+- pytest-html
 
 ---
 
