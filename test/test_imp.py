@@ -21,7 +21,7 @@ def test_login_exitoso():
     password.send_keys("secret_sauce")
 
     # Esperar tiempo
-    time.sleep(2)
+    time.sleep(1)
 
     # Click en Login
     button.click()
@@ -63,6 +63,14 @@ def test_login_exitoso():
     print(f'El carrito tiene {cart} productos.')
     assert cart == '1'
     time.sleep(2)
+
+    #Entrar a la pagina del carrito
+    driver.find_element(By.CLASS_NAME, 'shopping_cart_link').click()
+
+    #Verificar el numero de productos en la web del carrito
+    cart_items = driver.find_elements(By.CLASS_NAME, 'cart_list')
+    print(f'El carrito en su web tiene {len(cart_items)} productos.')
+
 
     # Esperar tiempo
     time.sleep(2)
