@@ -1,95 +1,118 @@
+import pytest
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
+
+from utils.saucedemo import login_saucedemo
 
 
-def test_login_exitoso():
-
-    # Abrir Chrome
+@pytest.fixture
+def browser():
+    # Configuración del navegador Chrome
     driver = webdriver.Chrome()
-
-    # Abrir página
     driver.get("https://www.saucedemo.com/")
 
-    # Encontrar elementos
-    user = driver.find_element(By.ID, "user-name")
-    password = driver.find_element(By.ID, "password")
-    button = driver.find_element(By.ID, "login-button")
+    yield driver
 
-    # Completar formulario
-    user.send_keys("standard_user")
-    password.send_keys("secret_sauce")
+    driver.quit()
 
-    # Esperar tiempo
-    time.sleep(1)
 
-    # Click en Login
-    button.click()
+@pytest.mark.login
+def test_login_exitoso(browser):
 
-    # Esperar hasta que aparezca el logo
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".header_label > .app_logo")))
-    
-    # Verificar URL
-    assert driver.current_url == "https://www.saucedemo.com/inventory.html"
+    login_saucedemo(browser)
 
-    # Verificar título
-    titulo = driver.find_element(By.CSS_SELECTOR, ".header_label > .app_logo").text
+    # Verifica que la URL sea la correcta después del login
+    assert browser.current_url == "https://www.saucedemo.com/inventory.html"
+
+
+@pytest.mark.catalogo
+def test_navegacion_y_verificacion_catalogo(browser):
+
+    login_saucedemo(browser)
+
+    # Verifica que el título de la página sea "Swag Labs"
+    titulo = browser.find_element(By.CSS_SELECTOR, ".header_label > .app_logo").text
+
     assert titulo == "Swag Labs"
 
-    # Verificar filtros
-    filtros = driver.find_element(By.CLASS_NAME, "product_sort_container")
-    assert filtros.is_displayed()
+    # Verifica que el menú hamburguesa esté visible
+    menu = browser.find_element(By.ID, "react-burger-menu-btn")
 
-    #verificar Boton Hamburgesa 
-    menu = driver.find_element(By.ID, "shopping_cart_container")
     assert menu.is_displayed()
 
+    # Verifica que los filtros estén visibles
+    filtros = browser.find_element(By.CLASS_NAME, "product_sort_container")
 
+    assert filtros.is_displayed()
 
-    # Encontrar productos
-    products = driver.find_elements(By.CLASS_NAME, "inventory_item")
+    # Verifica que existan productos
+    products = browser.find_elements(By.CLASS_NAME, "inventory_item")
 
-    # Mostrar cantidad de productos
     print(f"Se encontraron {len(products)} productos.")
 
-    # Mostrar y guardar el nombre del primer producto
-    first_product_name = products[0].find_element(By.CLASS_NAME, 'inventory_item_name').text
-    print("El primer producto es:", first_product_name)
+    assert len(products) > 0
 
-    # Mostrar precio del primer producto
-    print("El precio del primer producto es:", products[0].find_element(By.CLASS_NAME, "inventory_item_price").text)
-    
-    #click añadir al carrito el primer producto
-    products[0].find_element(By.ID, 'add-to-cart-sauce-labs-backpack').click()
-    
-    print(f'El primer producto agregado al carrito es: {first_product_name}')
 
-    #Chekear que el carrito tiene 1 producto
-    cart = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
-    print(f'El carrito tiene {cart} productos.')
-    assert cart == '1'
+@pytest.mark.productos
+def test_interaccion_productos(browser):
 
-    #Entrar a la pagina del carrito
-    driver.find_element(By.CLASS_NAME, 'shopping_cart_link').click()
+    login_saucedemo(browser)
 
-    # Verificar que estamos en la pagina del carrito
-    assert driver.current_url == "https://www.saucedemo.com/cart.html"
+    # Encontrar productos
+    products = browser.find_elements(By.CLASS_NAME, "inventory_item")
+
+    # Obtener nombre del primer producto
+    first_product_name = products[0].find_element(By.CLASS_NAME, "inventory_item_name").text
+
+    print("El primer producto del catalogo es:", first_product_name)
+
+    # Obtener precio del primer producto
+    first_product_price = products[0].find_element(By.CLASS_NAME, "inventory_item_price").text
+
+    print("El precio del primer producto es:", first_product_price)
+
+    # Encontrar el botón del primer producto
+    add_button = products[0].find_element(By.CLASS_NAME, "btn_inventory")
+
+    # Esperar hasta que el botón esté disponible
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CLASS_NAME, "btn_inventory")))
+
+    # Agregar el primer producto al carrito
+    add_button.click()
+
+    # Esperar hasta que el contador del carrito tenga el valor 1
+    WebDriverWait(browser, 10).until(EC.text_to_be_present_in_element((By.CLASS_NAME, "shopping_cart_badge"), "1"))
+
+    cart = browser.find_element(By.CLASS_NAME, "shopping_cart_badge").text
+
+    print(f"El carrito tiene {cart} productos.")
+
+    assert cart == "1"
+
+    # Ir a la página del carrito
+    browser.find_element(By.CLASS_NAME, "shopping_cart_link").click()
+
+    # Esperar hasta que cargue la URL del carrito
+    WebDriverWait(browser, 10).until(EC.url_to_be("https://www.saucedemo.com/cart.html"))
+
+    assert browser.current_url == "https://www.saucedemo.com/cart.html"
 
     # Esperar hasta que aparezca el producto en el carrito
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'cart_item')))
+    WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "cart_item")))
 
-    #Verificar el numero de productos en la web del carrito
-    cart_items = driver.find_elements(By.CLASS_NAME, 'cart_item')
-    print(f'El carrito en su web tiene {len(cart_items)} productos.')
+    cart_items = browser.find_elements(By.CLASS_NAME, "cart_item")
 
-    #Verificar que el primer producto agregado al carrito es el mismo que el primer producto en el carrito web
-    print("el primer producto en la pagina del carrito es: ", cart_items[0].find_element(By.CLASS_NAME, 'inventory_item_name').text)
-    #assert cart_items[0].find_element(By.CLASS_NAME, 'inventory_item_name').text == first_product_name
-    
-    # Esperar tiempo
-    time.sleep(2)
+    print(f"El carrito en su web tiene {len(cart_items)} productos.")
 
-    # Cerrar navegador
-    driver.quit()
+    assert len(cart_items) == 1
+
+    # Obtener nombre del producto en el carrito
+    cart_product_name = cart_items[0].find_element(By.CLASS_NAME, "inventory_item_name").text
+
+    print("El primer producto en la pagina del carrito es:", cart_product_name)
+
+    # Verificar que sea el mismo producto agregado
+    assert cart_product_name == first_product_name
