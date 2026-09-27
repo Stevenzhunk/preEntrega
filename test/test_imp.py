@@ -55,6 +55,14 @@ def test_login_exitoso():
     # Mostrar precio del primer producto
     print("El precio del primer producto es:", products[0].find_element(By.CLASS_NAME, "inventory_item_price").text)
     
+    #click añadir al carrito el primer producto
+    products[0].find_element(By.ID, 'add-to-cart-sauce-labs-backpack').click()
+
+    #Chekear que el carrito tiene 1 producto
+    cart = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
+    print(f'El carrito tiene {cart} productos.')
+    assert cart == '1'
+    time.sleep(2)
 
     # Esperar tiempo
     time.sleep(2)
