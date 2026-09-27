@@ -132,11 +132,11 @@ El proyecto utiliza las siguientes dependencias de Python:
 
 ▶️ Ejecución de las pruebas:
 
-    Para ejecutar todas las pruebas del proyecto, ubicarse dentro de la carpeta preEntrega y ejecutar:
+      Para ejecutar todas las pruebas del proyecto, ubicarse dentro de la carpeta preEntrega y ejecutar:
 
       python -m pytest -s
 
-    El parámetro -s permite visualizar en la terminal los mensajes generados mediante print() durante las pruebas.
+      El parámetro -s permite visualizar en la terminal los mensajes generados mediante print() durante las pruebas.
 
 🔐 Ejecutar solamente las pruebas de Login
 
