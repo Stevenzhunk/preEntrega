@@ -8,9 +8,9 @@ El proyecto utiliza **Python, Pytest y Selenium WebDriver** para validar diferen
 
 ## 🎯 Propósito del proyecto
 
-El objetivo del proyecto es automatizar diferentes escenarios funcionales de SauceDemo, aplicando herramientas y buenas prácticas de automatización de pruebas.
+El objetivo es automatizar diferentes escenarios funcionales de SauceDemo, aplicando herramientas y buenas prácticas de automatización de pruebas.
 
-Las pruebas están organizadas en tres grupos principales (para Pre-entrega):
+Las pruebas están organizadas en tres grupos principales correspondientes a la pre-entrega.
 
 ### 🔐 Automatización de Login
 
@@ -44,174 +44,252 @@ Se verifica:
 
 ---
 
-# 🛠️ Tecnologías utilizadas
+## 🛠️ Tecnologías utilizadas
 
-| Tecnología             | Utilización                                     |
-| ---------------------- | ----------------------------------------------- |
-| **Python 3.12**        | Lenguaje utilizado para desarrollar las pruebas |
-| **Pytest**             | Framework para crear y ejecutar las pruebas     |
-| **Selenium WebDriver** | Automatización e interacción con el navegador   |
-| **Google Chrome**      | Navegador utilizado para ejecutar las pruebas   |
-| **pytest-html**        | Generación de reportes HTML                     |
-| **Git**                | Control de versiones                            |
+| Tecnología         | Utilización                                      |
+| ------------------ | ------------------------------------------------ |
+| Python 3.12        | Lenguaje utilizado para desarrollar las pruebas. |
+| Pytest             | Framework para crear y ejecutar las pruebas.     |
+| Selenium WebDriver | Automatización e interacción con el navegador.   |
+| Google Chrome      | Navegador utilizado para ejecutar las pruebas.   |
+| pytest-html        | Generación de reportes HTML.                     |
+| Git                | Control de versiones.                            |
 
 ---
 
-# 📦 Dependencias
+## 📦 Dependencias
 
 El proyecto utiliza las siguientes dependencias de Python:
 
-- pytest
-- selenium
-- pytest-html
+- `pytest`
+- `selenium`
+- `pytest-html`
 
 ---
 
-🚀 Instalación
+## 🚀 Instalación y configuración
 
-1. Requisitos previos
+### 1. Requisitos previos
 
-   Antes de ejecutar el proyecto es necesario tener instalado:
+Antes de ejecutar el proyecto, es necesario tener instalado:
 
-   Python 3.12 o superior.
-   Google Chrome (si se desea usar este explorador, se puede ajustar en el fixture de browser() ).
-   Git, si el proyecto será clonado desde un repositorio.
+- **Python 3.12 o superior.**
+- **Google Chrome**, navegador utilizado para ejecutar las pruebas.
+- **Git**, si el proyecto se obtiene mediante un repositorio.
 
-   Para verificar que Python está instalado:
+Para verificar que Python está instalado correctamente, ejecutar:
 
-   `python --version`
+```bash
+python --version
+```
 
-   El resultado esperado será similar a:
+El resultado esperado será similar a:
 
-   Python 3.12.10
+```text
+Python 3.12.10
+```
 
-2. Crear un entorno virtual
+### 2. Crear un entorno virtual
 
-   Se recomienda utilizar un entorno virtual para mantener aisladas las dependencias del proyecto.
+Se recomienda utilizar un entorno virtual para mantener aisladas las dependencias del proyecto.
 
-   Desde la carpeta preEntrega ejecutar:
+Desde la carpeta raíz `preEntrega`, ejecutar:
 
-   `python -m venv .venv`
-   Activar el entorno virtual en Windows
+```bash
+python -m venv .venv
+```
 
-   En PowerShell:
+### 3. Activar el entorno virtual
 
-   `.venv\Scripts\Activate.ps1`
+En Windows, utilizando PowerShell, ejecutar:
 
-   Una vez activado, la terminal debería mostrar el entorno virtual activo.
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
-3. Instalar las dependencias
+Una vez activado, la terminal debería mostrar el nombre del entorno virtual activo.
 
-   Instalar Pytest:
+### 4. Instalar las dependencias
 
-   `pip install pytest`
+Con el entorno virtual activado, instalar las dependencias necesarias:
 
-   Instalar Selenium:
+```bash
+pip install pytest selenium pytest-html
+```
 
-   `pip install selenium`
+También es posible instalarlas por separado:
 
-   Instalar pytest-html para generar reportes:
+```bash
+pip install pytest
+```
 
-   `pip install pytest-html`
+```bash
+pip install selenium
+```
 
-   También es posible instalar todas las dependencias en un solo comando:
+```bash
+pip install pytest-html
+```
 
-   `pip install pytest selenium pytest-html`
+Para verificar que Pytest está instalado correctamente:
 
-   Para verificar que Pytest está instalado correctamente:
+```bash
+pytest --version
+```
 
-   `pytest --version`
+Para consultar la instalación de Selenium:
 
-   Para verificar Selenium:
+```bash
+pip show selenium
+```
 
-   `pip show selenium`
+Para consultar la instalación de pytest-html:
 
-   Para verificar pytest-html:
+```bash
+pip show pytest-html
+```
 
-   `pip show pytest-html`
+---
 
-▶️ Ejecución de las pruebas:
+## ▶️ Ejecución de las pruebas
 
-      Para ejecutar todas las pruebas del proyecto, ubicarse dentro de la carpeta preEntrega y ejecutar:
+Para ejecutar las pruebas, ubicarse en la carpeta raíz `preEntrega`, donde se encuentra el archivo `pytest.ini`.
 
-      ```python -m pytest -s```
+Ejecutar el siguiente comando:
 
-      El parámetro -s permite visualizar en la terminal los mensajes generados mediante print() durante las pruebas.
+```bash
+python -m pytest -s
+```
 
-🔐 Ejecutar solamente las pruebas de Login
+El parámetro `-s` permite visualizar en la terminal los mensajes generados mediante `print()` durante la ejecución de las pruebas.
 
-      Para ejecutar únicamente la prueba de login:
+---
 
-      ```python -m pytest -s -m login```
+## 🔐 Ejecutar solamente las pruebas de Login
 
-      Esta prueba verifica:
+Para ejecutar únicamente las pruebas identificadas con el marcador `login`:
 
-      Login exitoso.
-      URL correcta después del login.
+```bash
+python -m pytest -s -m login
+```
 
-📋 Ejecutar solamente las pruebas del catálogo
+Esta prueba verifica:
 
-      Para ejecutar únicamente las pruebas relacionadas con el catálogo:
+- Inicio de sesión exitoso.
+- Redirección a la URL correcta después del login.
 
-      ```python -m pytest -s -m catalogo```
+---
 
-      Esta prueba verifica:
+## 📋 Ejecutar solamente las pruebas del catálogo
 
-      Título de la aplicación.
-      Menú hamburguesa.
-      Filtros.
-      Productos disponibles.
+Para ejecutar únicamente las pruebas relacionadas con el catálogo:
 
-🛒 Ejecutar solamente las pruebas de productos
+```bash
+python -m pytest -s -m catalogo
+```
 
-      Para ejecutar únicamente la prueba de interacción con productos:
+Estas pruebas verifican:
 
-      ```python -m pytest -s -m productos```
+- Título de la aplicación.
+- Menú hamburguesa.
+- Filtros del catálogo.
+- Disponibilidad de productos.
 
-      Esta prueba verifica:
+---
 
-      Primer producto del catálogo.
-      Nombre y precio.
-      Agregado al carrito.
-      Contador del carrito.
-      Producto dentro del carrito.
-      Coincidencia entre el producto agregado y el producto mostrado en el carrito.
+## 🛒 Ejecutar solamente las pruebas de productos
 
-🏷️ Pytest Marks
+Para ejecutar únicamente las pruebas de interacción con productos:
 
-      Las pruebas están organizadas mediante los siguientes markers:
+```bash
+python -m pytest -s -m productos
+```
 
-      Marker	Descripción
-      login	Automatización del login y verificación de URL
-      catalogo	Navegación y verificación del catálogo
-      productos	Interacción con productos y carrito
+Estas pruebas verifican:
 
-      Los markers permiten ejecutar grupos específicos de pruebas sin necesidad de ejecutar todo el conjunto.
+- Identificación del primer producto del catálogo.
+- Obtención del nombre y precio.
+- Agregado del producto al carrito.
+- Actualización del contador del carrito.
+- Presencia del producto dentro del carrito.
+- Coincidencia entre el producto agregado y el producto mostrado en el carrito.
 
-      Para visualizar los markers disponibles:
+---
 
-      ```python -m pytest --markers```
+## 🏷️ Pytest Marks
 
-📊 Generación de reportes HTML
+Las pruebas están organizadas mediante los siguientes marcadores (_markers_):
 
-      El proyecto utiliza pytest-html para generar reportes de las pruebas.
+| Marker      | Descripción                                                   |
+| ----------- | ------------------------------------------------------------- |
+| `login`     | Automatización del inicio de sesión y verificación de la URL. |
+| `catalogo`  | Navegación y verificación del catálogo.                       |
+| `productos` | Interacción con productos y carrito de compras.               |
 
-      Para ejecutar todas las pruebas y generar un reporte HTML:
+Los markers permiten ejecutar grupos específicos de pruebas sin necesidad de ejecutar toda la suite.
 
-      ```python -m pytest -s --html=reports/report.html```
+Para visualizar los marcadores disponibles:
 
-      El reporte será generado en:
+```bash
+python -m pytest --markers
+```
 
-      reports/report.html
+---
 
-      El archivo puede abrirse directamente desde un navegador para visualizar el resultado de la ejecución.
+## 📊 Generación de reportes HTML
 
-⏱️ Esperas explícitas
+El proyecto utiliza `pytest-html` para generar reportes HTML con los resultados de la ejecución de las pruebas.
 
-      Para mejorar la estabilidad de las pruebas, se utilizan esperas explícitas mediante WebDriverWait y expected_conditions.
+Para ejecutar todas las pruebas y generar un reporte, utilizar:
 
-      Por ejemplo:
+```bash
+python -m pytest -s --html=reports/report.html
+```
 
-      WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "cart_item")))
+El reporte se generará en la siguiente ubicación:
 
-      Estas esperas permiten que Selenium aguarde hasta que un determinado elemento esté disponible antes de continuar con la prueba, evitando depender de tiempos de espera fijos.
+`reports/report.html`
+
+El archivo puede abrirse directamente desde un navegador para consultar los resultados de la ejecución.
+
+### Generar un reporte ejecutando un grupo específico
+
+También es posible generar reportes de grupos individuales de pruebas.
+
+**Ejemplo: reporte de las pruebas de Login**
+
+```bash
+python -m pytest -s -m login --html=reports/login.html
+```
+
+**Ejemplo: reporte de las pruebas del catálogo**
+
+```bash
+python -m pytest -s -m catalogo --html=reports/catalogo.html
+```
+
+**Ejemplo: reporte de las pruebas de productos**
+
+```bash
+python -m pytest -s -m productos --html=reports/productos.html
+```
+
+---
+
+## ⏱️ Esperas explícitas
+
+Para mejorar la estabilidad de las pruebas, se utilizan esperas explícitas mediante `WebDriverWait` y `expected_conditions`, herramientas proporcionadas por Selenium.
+
+Ejemplo de espera explícita:
+
+```python
+WebDriverWait(browser, 10).until(
+    EC.presence_of_element_located((By.CLASS_NAME, "cart_item"))
+)
+```
+
+Esta espera permite que Selenium aguarde hasta un máximo de 10 segundos para que el elemento indicado esté presente en el DOM antes de continuar con la prueba.
+
+El uso de esperas explícitas ayuda a reducir errores ocasionados por diferencias en los tiempos de carga de la aplicación y evita depender exclusivamente de pausas fijas mediante `time.sleep()`.
+
+---
