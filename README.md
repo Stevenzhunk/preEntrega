@@ -79,7 +79,7 @@ El proyecto utiliza las siguientes dependencias de Python:
 
    Para verificar que Python está instalado:
 
-   python --version
+   `python --version`
 
    El resultado esperado será similar a:
 
@@ -91,12 +91,12 @@ El proyecto utiliza las siguientes dependencias de Python:
 
    Desde la carpeta preEntrega ejecutar:
 
-   python -m venv .venv
+   `python -m venv .venv`
    Activar el entorno virtual en Windows
 
    En PowerShell:
 
-   .venv\Scripts\Activate.ps1
+   `.venv\Scripts\Activate.ps1`
 
    Una vez activado, la terminal debería mostrar el entorno virtual activo.
 
@@ -104,37 +104,37 @@ El proyecto utiliza las siguientes dependencias de Python:
 
    Instalar Pytest:
 
-   pip install pytest
+   `pip install pytest`
 
    Instalar Selenium:
 
-   pip install selenium
+   `pip install selenium`
 
    Instalar pytest-html para generar reportes:
 
-   pip install pytest-html
+   `pip install pytest-html`
 
    También es posible instalar todas las dependencias en un solo comando:
 
-   pip install pytest selenium pytest-html
+   `pip install pytest selenium pytest-html`
 
    Para verificar que Pytest está instalado correctamente:
 
-   pytest --version
+   `pytest --version`
 
    Para verificar Selenium:
 
-   pip show selenium
+   `pip show selenium`
 
    Para verificar pytest-html:
 
-   pip show pytest-html
+   `pip show pytest-html`
 
 ▶️ Ejecución de las pruebas:
 
       Para ejecutar todas las pruebas del proyecto, ubicarse dentro de la carpeta preEntrega y ejecutar:
 
-      python -m pytest -s
+      ```python -m pytest -s```
 
       El parámetro -s permite visualizar en la terminal los mensajes generados mediante print() durante las pruebas.
 
@@ -142,7 +142,7 @@ El proyecto utiliza las siguientes dependencias de Python:
 
       Para ejecutar únicamente la prueba de login:
 
-      python -m pytest -s -m login
+      ```python -m pytest -s -m login```
 
       Esta prueba verifica:
 
@@ -153,7 +153,7 @@ El proyecto utiliza las siguientes dependencias de Python:
 
       Para ejecutar únicamente las pruebas relacionadas con el catálogo:
 
-      python -m pytest -s -m catalogo
+      ```python -m pytest -s -m catalogo```
 
       Esta prueba verifica:
 
@@ -166,7 +166,7 @@ El proyecto utiliza las siguientes dependencias de Python:
 
       Para ejecutar únicamente la prueba de interacción con productos:
 
-      python -m pytest -s -m productos
+      ```python -m pytest -s -m productos```
 
       Esta prueba verifica:
 
@@ -190,7 +190,7 @@ El proyecto utiliza las siguientes dependencias de Python:
 
       Para visualizar los markers disponibles:
 
-      python -m pytest --markers
+      ```python -m pytest --markers```
 
 📊 Generación de reportes HTML
 
@@ -198,7 +198,7 @@ El proyecto utiliza las siguientes dependencias de Python:
 
       Para ejecutar todas las pruebas y generar un reporte HTML:
 
-      python -m pytest -s --html=reports/report.html
+      ```python -m pytest -s --html=reports/report.html```
 
       El reporte será generado en:
 
