@@ -89,27 +89,7 @@ El resultado esperado será similar a:
 Python 3.12.10
 ```
 
-### 2. Crear un entorno virtual
-
-Se recomienda utilizar un entorno virtual para mantener aisladas las dependencias del proyecto.
-
-Desde la carpeta raíz `preEntrega`, ejecutar:
-
-```bash
-python -m venv .venv
-```
-
-### 3. Activar el entorno virtual
-
-En Windows, utilizando PowerShell, ejecutar:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Una vez activado, la terminal debería mostrar el nombre del entorno virtual activo.
-
-### 4. Instalar las dependencias
+### 2. Instalar las dependencias
 
 Con el entorno virtual activado, instalar las dependencias necesarias:
 
@@ -235,50 +215,6 @@ python -m pytest --markers
 ```
 
 ---
-
-## 📊 Generación de reportes HTML
-
-El proyecto utiliza `pytest-html` para generar reportes HTML con los resultados de la ejecución de las pruebas.
-
-Para ejecutar todas las pruebas y generar un reporte, utilizar:
-
-```bash
-python -m pytest -s --html=reports/report.html
-```
-
-El reporte se generará en la siguiente ubicación:
-
-`reports/report.html`
-
-El archivo puede abrirse directamente desde un navegador para consultar los resultados de la ejecución.
-
-### Generar un reporte ejecutando un grupo específico
-
-También es posible generar reportes de grupos individuales de pruebas.
-
-**Ejemplo: reporte de las pruebas de Login**
-
-```bash
-python -m pytest -s -m login --html=reports/login.html
-```
-
-**Ejemplo: reporte de las pruebas del catálogo**
-
-```bash
-python -m pytest -s -m catalogo --html=reports/catalogo.html
-```
-
-**Ejemplo: reporte de las pruebas de productos**
-
-```bash
-python -m pytest -s -m productos --html=reports/productos.html
-```
-
----
-
-## ⏱️ Esperas explícitas
-
-Para mejorar la estabilidad de las pruebas, se utilizan esperas explícitas mediante `WebDriverWait` y `expected_conditions`, herramientas proporcionadas por Selenium.
 
 Ejemplo de espera explícita:
 
