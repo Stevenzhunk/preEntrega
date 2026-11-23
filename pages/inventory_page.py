@@ -49,3 +49,37 @@ class InventoryPage:
         )
         return filtro.is_displayed()
 
+    def agregar_producto(self, nombre):
+        productos = self.obtener_productos()
+
+        for producto in productos:
+            nombre_producto = producto.find_element(
+                By.CLASS_NAME, "inventory_item_name"
+            ).text
+
+            if nombre_producto == nombre:
+                boton = producto.find_element(
+                    By.TAG_NAME, "button"
+                )
+                self.wait.until(
+                    lambda driver: boton.is_displayed() and boton.is_enabled()
+                )
+                boton.click()
+                return
+
+        raise AssertionError(f"No se encontró el producto: {nombre}")
+
+    def obtener_contador_carrito(self):
+        return self.wait.until(
+            EC.visibility_of_element_located(
+                (By.CLASS_NAME, "shopping_cart_badge")
+            )
+        ).text
+
+    def ir_al_carrito(self):
+        carrito = self.wait.until(
+            EC.element_to_be_clickable(
+                (By.CLASS_NAME, "shopping_cart_link")
+            )
+        )
+        carrito.click()
