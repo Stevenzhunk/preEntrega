@@ -12,10 +12,11 @@ class CartPage:
     def obtener_titulo(self):
         titulo = self.wait.until(
             EC.visibility_of_element_located(
-                (By.CLASS_NAME, "title")
+                (By.XPATH, "//span[@class='title' and text()='Your Cart']")
             )
         )
         return titulo.text
+    
 
     def obtener_productos_carrito(self):
         return self.wait.until(
