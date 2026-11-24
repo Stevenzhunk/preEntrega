@@ -1,0 +1,25 @@
+19:26:15 INFO TalentoTech - Iniciando prueba de carrito.
+19:26:15 INFO TalentoTech - Instanciando la página de inventario.
+19:26:15 INFO TalentoTech - Obteniendo nombre del primer producto del inventario.
+19:26:16 INFO TalentoTech - Agregando el primer producto 'Sauce Labs Backpack' al carrito.
+19:26:16 INFO TalentoTech - Verificando que el contador del carrito sea '1'.
+19:26:16 INFO TalentoTech - Navegando al carrito de compras.
+19:26:16 INFO TalentoTech - Instanciando la página del carrito.
+19:26:16 INFO TalentoTech - Verificando que la URL sea 'https://www.saucedemo.com/cart.html'.
+19:26:16 INFO TalentoTech - Verificando que el título de la página del carrito sea 'Your Cart'.
+19:26:16 INFO TalentoTech - Obteniendo productos en el carrito.
+19:26:16 INFO TalentoTech - El carrito en su web tiene 1 productos.
+19:26:16 INFO TalentoTech - Obteniendo nombre del primer producto en la página del carrito.
+19:26:16 INFO TalentoTech - El primer producto en la pagina del carrito es: Sauce Labs Backpack
+19:26:16 INFO TalentoTech - Verificando que el nombre del producto en el carrito coincida con el nombre del primer producto del inventario.
+19:26:19 INFO TalentoTech - Iniciando prueba de inventario.
+19:26:19 INFO TalentoTech - Iniciando sesión con usuario estándar.
+19:26:19 INFO TalentoTech - Instanciando la página de inventario.
+19:26:19 INFO TalentoTech - Obteniendo nombre y precio del primer producto del inventario.
+19:26:20 INFO TalentoTech - Verificando que el título de la página sea 'Swag Labs' y que haya productos en el inventario.
+19:26:20 INFO TalentoTech - Se encontraron 6 productos en el inventario.
+19:26:20 INFO TalentoTech - El primer producto del catalogo es: Sauce Labs Backpack
+19:26:20 INFO TalentoTech - El precio del primer producto es: $29.99
+19:26:22 INFO TalentoTech - Iniciando prueba de login exitoso.
+19:26:22 INFO TalentoTech - Iniciando sesión con usuario estándar.
+19:26:23 INFO TalentoTech - Verificando que la URL contenga '/inventory.html'.

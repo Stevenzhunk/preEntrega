@@ -5,7 +5,7 @@ import pytest_html
 import pathlib
 import base64
 
-
+# Guardar URL y capturar pantalla si falla la prueba
 @pytest.fixture(scope="function")
 def driver():
     options = webdriver.ChromeOptions()
