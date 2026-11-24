@@ -1,0 +1,66 @@
+20:00:32 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Backpack
+20:00:32 INFO TalentoTech - Instanciando la página de inventario.
+20:00:32 INFO TalentoTech - Agregando 'Sauce Labs Backpack' del JSON al carrito.
+20:00:33 INFO TalentoTech - Verificando contador del carrito.
+20:00:33 INFO TalentoTech - Navegando al carrito de compras.
+20:00:33 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+20:00:33 INFO TalentoTech - Verificando título del carrito.
+20:00:33 INFO TalentoTech - Obteniendo productos en el carrito.
+20:00:33 INFO TalentoTech - El carrito contiene 1 productos.
+20:00:33 INFO TalentoTech - Verificando nombre del producto en el carrito.
+20:00:33 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Backpack
+20:00:33 INFO TalentoTech - Verificando precio del producto en el carrito.
+20:00:33 INFO TalentoTech - Precio del producto en el carrito: $29.99
+20:00:33 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Backpack
+20:00:36 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Bike Light
+20:00:36 INFO TalentoTech - Instanciando la página de inventario.
+20:00:36 INFO TalentoTech - Agregando 'Sauce Labs Bike Light' del JSON al carrito.
+20:00:36 INFO TalentoTech - Verificando contador del carrito.
+20:00:36 INFO TalentoTech - Navegando al carrito de compras.
+20:00:37 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+20:00:37 INFO TalentoTech - Verificando título del carrito.
+20:00:37 INFO TalentoTech - Obteniendo productos en el carrito.
+20:00:37 INFO TalentoTech - El carrito contiene 1 productos.
+20:00:37 INFO TalentoTech - Verificando nombre del producto en el carrito.
+20:00:37 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Bike Light
+20:00:37 INFO TalentoTech - Verificando precio del producto en el carrito.
+20:00:37 INFO TalentoTech - Precio del producto en el carrito: $9.99
+20:00:37 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Bike Light
+20:00:40 INFO TalentoTech - Iniciando prueba de carrito para: Producto Inexistente
+20:00:40 INFO TalentoTech - Instanciando la página de inventario.
+20:00:40 INFO TalentoTech - Agregando 'Producto Inexistente' del JSON al carrito.
+20:00:43 INFO TalentoTech - Iniciando prueba de inventario.
+20:00:43 INFO TalentoTech - Iniciando sesión con usuario estándar.
+20:00:44 INFO TalentoTech - Instanciando la página de inventario.
+20:00:44 INFO TalentoTech - Obteniendo nombre y precio del primer producto del inventario.
+20:00:44 INFO TalentoTech - Verificando que el título de la página sea 'Swag Labs' y que haya productos en el inventario.
+20:00:44 INFO TalentoTech - Se encontraron 6 productos en el inventario.
+20:00:44 INFO TalentoTech - El primer producto del catalogo es: Sauce Labs Backpack
+20:00:44 INFO TalentoTech - El precio del primer producto es: $29.99
+20:00:47 INFO TalentoTech - Iniciando prueba de login para: standard_user
+20:00:47 INFO TalentoTech - Abriendo la página de login.
+20:00:47 INFO TalentoTech - Credenciales ingresadas correctamente
+20:00:47 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login exitoso.
+20:00:47 INFO TalentoTech - Login exitoso
+20:00:50 INFO TalentoTech - Iniciando prueba de login para: usuario_invalido
+20:00:50 INFO TalentoTech - Abriendo la página de login.
+20:00:50 INFO TalentoTech - Credenciales ingresadas correctamente
+20:00:50 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login fallido.
+20:00:50 INFO TalentoTech - Mensaje de error validado correctamente
+20:00:53 INFO TalentoTech - Iniciando prueba de login para: usuario_inexistente
+20:00:53 INFO TalentoTech - Abriendo la página de login.
+20:00:53 INFO TalentoTech - Credenciales ingresadas correctamente
+20:00:53 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login fallido.
+20:00:53 INFO TalentoTech - Mensaje de error validado correctamente
+20:00:56 INFO TalentoTech - Iniciando prueba de login para: locked_out_user
+20:00:56 INFO TalentoTech - Abriendo la página de login.
+20:00:56 INFO TalentoTech - Credenciales ingresadas correctamente
+20:00:56 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login exitoso.
+20:01:04 INFO TalentoTech - Iniciando prueba de login para: locked_out_user
+20:01:04 INFO TalentoTech - Abriendo la página de login.
+20:01:05 INFO TalentoTech - Credenciales ingresadas correctamente
+20:01:05 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login exitoso.
+20:01:12 INFO TalentoTech - Iniciando prueba de login para: locked_out_user
+20:01:12 INFO TalentoTech - Abriendo la página de login.
+20:01:13 INFO TalentoTech - Credenciales ingresadas correctamente
+20:01:13 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login exitoso.

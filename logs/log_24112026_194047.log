@@ -1,0 +1,37 @@
+19:40:48 INFO TalentoTech - Iniciando prueba de carrito.
+19:40:48 INFO TalentoTech - Instanciando la página de inventario.
+19:40:48 INFO TalentoTech - Obteniendo nombre del primer producto del inventario.
+19:40:49 INFO TalentoTech - Agregando el primer producto 'Sauce Labs Backpack' al carrito.
+19:40:49 INFO TalentoTech - Verificando que el contador del carrito sea '1'.
+19:40:49 INFO TalentoTech - Navegando al carrito de compras.
+19:40:49 INFO TalentoTech - Instanciando la página del carrito.
+19:40:49 INFO TalentoTech - Verificando que la URL sea 'https://www.saucedemo.com/cart.html'.
+19:40:49 INFO TalentoTech - Verificando que el título de la página del carrito sea 'Your Cart'.
+19:40:49 INFO TalentoTech - Obteniendo productos en el carrito.
+19:40:49 INFO TalentoTech - El carrito en su web tiene 1 productos.
+19:40:49 INFO TalentoTech - Obteniendo nombre del primer producto en la página del carrito.
+19:40:49 INFO TalentoTech - El primer producto en la pagina del carrito es: Sauce Labs Backpack
+19:40:49 INFO TalentoTech - Verificando que el nombre del producto en el carrito coincida con el nombre del primer producto del inventario.
+19:40:52 INFO TalentoTech - Iniciando prueba de inventario.
+19:40:52 INFO TalentoTech - Iniciando sesión con usuario estándar.
+19:40:52 INFO TalentoTech - Instanciando la página de inventario.
+19:40:52 INFO TalentoTech - Obteniendo nombre y precio del primer producto del inventario.
+19:40:53 INFO TalentoTech - Verificando que el título de la página sea 'Swag Labs' y que haya productos en el inventario.
+19:40:53 INFO TalentoTech - Se encontraron 6 productos en el inventario.
+19:40:53 INFO TalentoTech - El primer producto del catalogo es: Sauce Labs Backpack
+19:40:53 INFO TalentoTech - El precio del primer producto es: $29.99
+19:40:55 INFO TalentoTech - Iniciando prueba de login para: standard_user
+19:40:55 INFO TalentoTech - Abriendo la página de login.
+19:40:56 INFO TalentoTech - Credenciales ingresadas correctamente
+19:40:56 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login exitoso.
+19:40:56 INFO TalentoTech - Login exitoso
+19:40:58 INFO TalentoTech - Iniciando prueba de login para: usuario_invalido
+19:40:58 INFO TalentoTech - Abriendo la página de login.
+19:40:59 INFO TalentoTech - Credenciales ingresadas correctamente
+19:40:59 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login fallido.
+19:40:59 INFO TalentoTech - Mensaje de error validado correctamente
+19:41:01 INFO TalentoTech - Iniciando prueba de login para: usuario_inexistente
+19:41:01 INFO TalentoTech - Abriendo la página de login.
+19:41:02 INFO TalentoTech - Credenciales ingresadas correctamente
+19:41:02 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login fallido.
+19:41:02 INFO TalentoTech - Mensaje de error validado correctamente

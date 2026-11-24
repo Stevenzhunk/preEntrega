@@ -1,11 +1,12 @@
 
 import pytest
 from selenium import webdriver
+from selenium.common.exceptions import WebDriverException
 import pytest_html
 import pathlib
 import base64
 
-# Guardar URL y capturar pantalla si falla la prueba
+
 @pytest.fixture(scope="function")
 def driver():
     options = webdriver.ChromeOptions()
@@ -35,23 +36,31 @@ def pytest_runtest_makereport(item, call):
     if report.when == "call":
         driver = item.funcargs.get("driver")
 
-        if driver:
-            report.page_url = driver.current_url
+        if driver is not None:
 
-            if report.failed:
-                carpeta = pathlib.Path("reports/screenshots")
-                carpeta.mkdir(parents=True, exist_ok=True)
+            try:
+                report.page_url = driver.current_url
 
-                archivo = carpeta / f"{item.name}.png"
-                driver.save_screenshot(str(archivo))
+                if report.failed:
+                    carpeta = pathlib.Path("reports/screenshots")
+                    carpeta.mkdir(parents=True, exist_ok=True)
 
-                imagen = base64.b64encode(
-                    archivo.read_bytes()
-                ).decode("utf-8")
+                    archivo = carpeta / f"{item.name}.png"
 
-                report.extras = [
-                    pytest_html.extras.png(imagen, name="Screenshot")
-                ]
+                    if driver.save_screenshot(str(archivo)):
+                        imagen = base64.b64encode(
+                            archivo.read_bytes()
+                        ).decode("utf-8")
+
+                        report.extras = [
+                            pytest_html.extras.png(
+                                imagen,
+                                name="Screenshot"
+                            )
+                        ]
+
+            except WebDriverException:
+                report.page_url = "-"
 
 
 # Encabezado del reporte

@@ -1,0 +1,59 @@
+20:06:00 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Backpack
+20:06:00 INFO TalentoTech - Instanciando la página de inventario.
+20:06:00 INFO TalentoTech - Agregando 'Sauce Labs Backpack' del JSON al carrito.
+20:06:01 INFO TalentoTech - Verificando contador del carrito.
+20:06:01 INFO TalentoTech - Navegando al carrito de compras.
+20:06:01 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+20:06:01 INFO TalentoTech - Verificando título del carrito.
+20:06:01 INFO TalentoTech - Obteniendo productos en el carrito.
+20:06:01 INFO TalentoTech - El carrito contiene 1 productos.
+20:06:01 INFO TalentoTech - Verificando nombre del producto en el carrito.
+20:06:01 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Backpack
+20:06:01 INFO TalentoTech - Verificando precio del producto en el carrito.
+20:06:01 INFO TalentoTech - Precio del producto en el carrito: $29.99
+20:06:01 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Backpack
+20:06:04 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Bike Light
+20:06:04 INFO TalentoTech - Instanciando la página de inventario.
+20:06:04 INFO TalentoTech - Agregando 'Sauce Labs Bike Light' del JSON al carrito.
+20:06:05 INFO TalentoTech - Verificando contador del carrito.
+20:06:05 INFO TalentoTech - Navegando al carrito de compras.
+20:06:05 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+20:06:05 INFO TalentoTech - Verificando título del carrito.
+20:06:05 INFO TalentoTech - Obteniendo productos en el carrito.
+20:06:05 INFO TalentoTech - El carrito contiene 1 productos.
+20:06:05 INFO TalentoTech - Verificando nombre del producto en el carrito.
+20:06:05 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Bike Light
+20:06:05 INFO TalentoTech - Verificando precio del producto en el carrito.
+20:06:05 INFO TalentoTech - Precio del producto en el carrito: $9.99
+20:06:05 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Bike Light
+20:06:07 INFO TalentoTech - Iniciando prueba de carrito para: Producto Inexistente
+20:06:08 INFO TalentoTech - Instanciando la página de inventario.
+20:06:08 INFO TalentoTech - Agregando 'Producto Inexistente' del JSON al carrito.
+20:06:11 INFO TalentoTech - Iniciando prueba de inventario.
+20:06:11 INFO TalentoTech - Iniciando sesión con usuario estándar.
+20:06:11 INFO TalentoTech - Instanciando la página de inventario.
+20:06:11 INFO TalentoTech - Obteniendo nombre y precio del primer producto del inventario.
+20:06:12 INFO TalentoTech - Verificando que el título de la página sea 'Swag Labs' y que haya productos en el inventario.
+20:06:12 INFO TalentoTech - Se encontraron 6 productos en el inventario.
+20:06:12 INFO TalentoTech - El primer producto del catalogo es: Sauce Labs Backpack
+20:06:12 INFO TalentoTech - El precio del primer producto es: $29.99
+20:06:14 INFO TalentoTech - Iniciando prueba de login para: standard_user
+20:06:14 INFO TalentoTech - Abriendo la página de login.
+20:06:15 INFO TalentoTech - Credenciales enviadas correctamente.
+20:06:15 INFO TalentoTech - Verificando acceso al inventario.
+20:06:15 INFO TalentoTech - Login exitoso.
+20:06:17 INFO TalentoTech - Iniciando prueba de login para: usuario_invalido
+20:06:17 INFO TalentoTech - Abriendo la página de login.
+20:06:18 INFO TalentoTech - Credenciales enviadas correctamente.
+20:06:18 INFO TalentoTech - Verificando mensaje de error.
+20:06:18 INFO TalentoTech - Credenciales inválidas validadas correctamente.
+20:06:21 INFO TalentoTech - Iniciando prueba de login para: usuario_inexistente
+20:06:21 INFO TalentoTech - Abriendo la página de login.
+20:06:21 INFO TalentoTech - Credenciales enviadas correctamente.
+20:06:21 INFO TalentoTech - Verificando mensaje de error.
+20:06:21 INFO TalentoTech - Credenciales inválidas validadas correctamente.
+20:06:23 INFO TalentoTech - Iniciando prueba de login para: locked_out_user
+20:06:23 INFO TalentoTech - Abriendo la página de login.
+20:06:24 INFO TalentoTech - Credenciales enviadas correctamente.
+20:06:24 INFO TalentoTech - Verificando mensaje de error.
+20:06:24 INFO TalentoTech - Usuario bloqueado validado correctamente.

@@ -1,0 +1,105 @@
+20:08:57 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Backpack
+20:08:58 INFO TalentoTech - Instanciando la página de inventario.
+20:08:58 INFO TalentoTech - Agregando 'Sauce Labs Backpack' del JSON al carrito.
+20:08:58 INFO TalentoTech - Verificando contador del carrito.
+20:08:58 INFO TalentoTech - Navegando al carrito de compras.
+20:08:58 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+20:08:58 INFO TalentoTech - Verificando título del carrito.
+20:08:58 INFO TalentoTech - Obteniendo productos en el carrito.
+20:08:58 INFO TalentoTech - El carrito contiene 1 productos.
+20:08:58 INFO TalentoTech - Verificando nombre del producto en el carrito.
+20:08:58 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Backpack
+20:08:58 INFO TalentoTech - Verificando precio del producto en el carrito.
+20:08:58 INFO TalentoTech - Precio del producto en el carrito: $29.99
+20:08:58 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Backpack
+20:09:01 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Bike Light
+20:09:01 INFO TalentoTech - Instanciando la página de inventario.
+20:09:01 INFO TalentoTech - Agregando 'Sauce Labs Bike Light' del JSON al carrito.
+20:09:02 INFO TalentoTech - Verificando contador del carrito.
+20:09:02 INFO TalentoTech - Navegando al carrito de compras.
+20:09:02 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+20:09:02 INFO TalentoTech - Verificando título del carrito.
+20:09:02 INFO TalentoTech - Obteniendo productos en el carrito.
+20:09:02 INFO TalentoTech - El carrito contiene 1 productos.
+20:09:02 INFO TalentoTech - Verificando nombre del producto en el carrito.
+20:09:02 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Bike Light
+20:09:02 INFO TalentoTech - Verificando precio del producto en el carrito.
+20:09:02 INFO TalentoTech - Precio del producto en el carrito: $9.99
+20:09:02 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Bike Light
+20:09:04 INFO TalentoTech - Iniciando prueba de carrito para: Producto Inexistente
+20:09:05 INFO TalentoTech - Instanciando la página de inventario.
+20:09:05 INFO TalentoTech - Agregando 'Producto Inexistente' del JSON al carrito.
+20:09:08 INFO TalentoTech - Iniciando prueba de inventario.
+20:09:08 INFO TalentoTech - Iniciando sesión con usuario estándar.
+20:09:08 INFO TalentoTech - Instanciando la página de inventario.
+20:09:08 INFO TalentoTech - Obteniendo nombre y precio del primer producto del inventario.
+20:09:09 INFO TalentoTech - Verificando que el título de la página sea 'Swag Labs' y que haya productos en el inventario.
+20:09:09 INFO TalentoTech - Se encontraron 6 productos en el inventario.
+20:09:09 INFO TalentoTech - El primer producto del catalogo es: Sauce Labs Backpack
+20:09:09 INFO TalentoTech - El precio del primer producto es: $29.99
+20:09:12 INFO TalentoTech - Iniciando prueba de login para: standard_user
+20:09:12 INFO TalentoTech - Abriendo la página de login.
+20:09:12 INFO TalentoTech - Credenciales enviadas correctamente.
+20:09:12 INFO TalentoTech - Verificando acceso al inventario.
+20:09:12 INFO TalentoTech - Login exitoso.
+20:09:15 INFO TalentoTech - Iniciando prueba de login para: usuario_invalido
+20:09:15 INFO TalentoTech - Abriendo la página de login.
+20:09:15 INFO TalentoTech - Credenciales enviadas correctamente.
+20:09:15 INFO TalentoTech - Verificando mensaje de error.
+20:09:15 INFO TalentoTech - Credenciales inválidas validadas correctamente.
+20:09:18 INFO TalentoTech - Iniciando prueba de login para: usuario_inexistente
+20:09:18 INFO TalentoTech - Abriendo la página de login.
+20:09:18 INFO TalentoTech - Credenciales enviadas correctamente.
+20:09:18 INFO TalentoTech - Verificando mensaje de error.
+20:09:18 INFO TalentoTech - Credenciales inválidas validadas correctamente.
+20:09:21 INFO TalentoTech - Iniciando prueba de login para: locked_out_user
+20:09:21 INFO TalentoTech - Abriendo la página de login.
+20:09:21 INFO TalentoTech - Credenciales enviadas correctamente.
+20:09:21 INFO TalentoTech - Verificando mensaje de error.
+20:09:21 INFO TalentoTech - Usuario bloqueado validado correctamente.
+20:09:24 INFO TalentoTech - Iniciando prueba de login para: usuario_prueba
+20:09:24 INFO TalentoTech - Abriendo la página de login.
+20:09:24 INFO TalentoTech - Credenciales enviadas correctamente.
+20:09:24 INFO TalentoTech - Verificando acceso al inventario.
+20:09:33 ERROR TalentoTech - Error durante la prueba de login para: usuario_prueba
+Traceback (most recent call last):
+  File "C:\Users\Stevenz Hunks\Desktop\FullStackOpen\QA auto\preEntrega\tests\test_login.py", line 32, in test_login
+    WebDriverWait(driver, 10).until(
+  File "C:\Users\Stevenz Hunks\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\selenium\webdriver\support\wait.py", line 112, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stevenz Hunks\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 112, in _predicate
+    return url in driver.current_url
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stevenz Hunks\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 640, in current_url
+    return self.execute(Command.GET_CURRENT_URL)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stevenz Hunks\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 506, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Stevenz Hunks\AppData\Local\Python\pythoncore-3.12-64\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=158.0.8127.37); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x7ff63c500f05]
+	(No symbol) [0x7ff63c401db0]
+	(No symbol) [0x7ff63c283433]
+	(No symbol) [0x7ff63c277d7f]
+	(No symbol) [0x7ff63c289a4d]
+	(No symbol) [0x7ff63c2b1546]
+	(No symbol) [0x7ff63c2b583f]
+	(No symbol) [0x7ff63c29bea1]
+	(No symbol) [0x7ff63c29d1d3]
+	(No symbol) [0x7ff63c9a0f4f]
+	(No symbol) [0x7ff63c9c7678]
+	(No symbol) [0x7ff63c9baf68]
+	(No symbol) [0x7ff63c61e62e]
+	(No symbol) [0x7ff63c4116f3]
+	(No symbol) [0x7ff63c40c304]
+	(No symbol) [0x7ff63c40c494]
+	(No symbol) [0x7ff63c3f509c]
+	(No symbol) [0x7ffee50fdda7]
+	(No symbol) [0x7ffee6c59c5c]
+

@@ -1,0 +1,51 @@
+19:57:00 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Backpack
+19:57:01 INFO TalentoTech - Instanciando la página de inventario.
+19:57:01 INFO TalentoTech - Agregando 'Sauce Labs Backpack' del JSON al carrito.
+19:57:01 INFO TalentoTech - Verificando contador del carrito.
+19:57:01 INFO TalentoTech - Navegando al carrito de compras.
+19:57:01 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+19:57:01 INFO TalentoTech - Verificando título del carrito.
+19:57:01 INFO TalentoTech - Obteniendo productos en el carrito.
+19:57:01 INFO TalentoTech - El carrito contiene 1 productos.
+19:57:01 INFO TalentoTech - Verificando nombre del producto en el carrito.
+19:57:01 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Backpack
+19:57:01 INFO TalentoTech - Verificando precio del producto en el carrito.
+19:57:01 INFO TalentoTech - Precio del producto en el carrito: $29.99
+19:57:01 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Backpack
+19:57:04 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Bike Light
+19:57:04 INFO TalentoTech - Instanciando la página de inventario.
+19:57:04 INFO TalentoTech - Agregando 'Sauce Labs Bike Light' del JSON al carrito.
+19:57:05 INFO TalentoTech - Verificando contador del carrito.
+19:57:05 INFO TalentoTech - Navegando al carrito de compras.
+19:57:05 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+19:57:05 INFO TalentoTech - Verificando título del carrito.
+19:57:05 INFO TalentoTech - Obteniendo productos en el carrito.
+19:57:05 INFO TalentoTech - El carrito contiene 1 productos.
+19:57:05 INFO TalentoTech - Verificando nombre del producto en el carrito.
+19:57:05 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Bike Light
+19:57:05 INFO TalentoTech - Verificando precio del producto en el carrito.
+19:57:05 INFO TalentoTech - Precio del producto en el carrito: $9.99
+19:57:05 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Bike Light
+19:57:07 INFO TalentoTech - Iniciando prueba de inventario.
+19:57:07 INFO TalentoTech - Iniciando sesión con usuario estándar.
+19:57:08 INFO TalentoTech - Instanciando la página de inventario.
+19:57:08 INFO TalentoTech - Obteniendo nombre y precio del primer producto del inventario.
+19:57:08 INFO TalentoTech - Verificando que el título de la página sea 'Swag Labs' y que haya productos en el inventario.
+19:57:08 INFO TalentoTech - Se encontraron 6 productos en el inventario.
+19:57:08 INFO TalentoTech - El primer producto del catalogo es: Sauce Labs Backpack
+19:57:08 INFO TalentoTech - El precio del primer producto es: $29.99
+19:57:11 INFO TalentoTech - Iniciando prueba de login para: standard_user
+19:57:11 INFO TalentoTech - Abriendo la página de login.
+19:57:11 INFO TalentoTech - Credenciales ingresadas correctamente
+19:57:11 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login exitoso.
+19:57:11 INFO TalentoTech - Login exitoso
+19:57:14 INFO TalentoTech - Iniciando prueba de login para: usuario_invalido
+19:57:14 INFO TalentoTech - Abriendo la página de login.
+19:57:14 INFO TalentoTech - Credenciales ingresadas correctamente
+19:57:14 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login fallido.
+19:57:14 INFO TalentoTech - Mensaje de error validado correctamente
+19:57:17 INFO TalentoTech - Iniciando prueba de login para: usuario_inexistente
+19:57:17 INFO TalentoTech - Abriendo la página de login.
+19:57:17 INFO TalentoTech - Credenciales ingresadas correctamente
+19:57:17 INFO TalentoTech - Verificando que la URL contenga '/inventory.html' para un login fallido.
+19:57:17 INFO TalentoTech - Mensaje de error validado correctamente

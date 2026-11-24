@@ -1,23 +1,60 @@
+
+import pytest
+
 from pages.login_page import LoginPage
+from utils.reader import read_users_csv
+from utils.logger import logger
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from utils.logger import logger
 
-def test_login_exitoso(driver):
+@pytest.mark.parametrize("data", read_users_csv())
+def test_login(driver, data):
 
-    # Instanciar la página de login
-    logger.info("Iniciando prueba de login exitoso.")
-    login_page = LoginPage(driver)
+    try:
+        logger.info(f"Iniciando prueba de login para: {data['usuario']}")
 
-    # Iniciar sesión
-    logger.info("Iniciando sesión con usuario estándar.")
-    login_page.login_saucedemo("standard_user", "secret_sauce")
+        login_page = LoginPage(driver)
 
-    logger.info("Verificando que la URL contenga '/inventory.html'.")
-    WebDriverWait(driver, 10).until(
-        EC.url_contains("/inventory.html")
-    )
+        logger.info("Abriendo la página de login.")
+        login_page.login_saucedemo(
+            data["usuario"],
+            data["password"]
+        )
 
-    assert "/inventory.html" in driver.current_url
+        logger.info("Credenciales enviadas correctamente.")
+
+        if data["tipo_usuario"] == "exitoso":
+
+            logger.info("Verificando acceso al inventario.")
+
+            WebDriverWait(driver, 10).until(
+                EC.url_contains("/inventory.html")
+            )
+
+            assert "/inventory.html" in driver.current_url
+
+            logger.info("Login exitoso.")
+
+        else:
+
+            logger.info("Verificando mensaje de error.")
+
+            error = login_page.obtener_mensaje_error()
+
+            assert "Epic sadface" in error
+
+            if data["tipo_usuario"] == "bloqueado":
+                assert "locked out" in error.lower()
+                logger.info("Usuario bloqueado validado correctamente.")
+
+            else:
+                assert "Username and password do not match" in error
+                logger.info("Credenciales inválidas validadas correctamente.")
+
+    except Exception:
+        logger.exception(
+            f"Error durante la prueba de login para: {data['usuario']}"
+        )
+        raise

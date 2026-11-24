@@ -1,0 +1,28 @@
+19:47:40 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Backpack
+19:47:41 INFO TalentoTech - Instanciando la página de inventario.
+19:47:41 INFO TalentoTech - Agregando 'Sauce Labs Backpack' al carrito.
+19:47:41 INFO TalentoTech - Verificando contador del carrito.
+19:47:41 INFO TalentoTech - Navegando al carrito de compras.
+19:47:41 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+19:47:41 INFO TalentoTech - Verificando título del carrito.
+19:47:41 INFO TalentoTech - Obteniendo productos en el carrito.
+19:47:41 INFO TalentoTech - El carrito contiene 1 productos.
+19:47:41 INFO TalentoTech - Verificando nombre del producto en el carrito.
+19:47:41 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Backpack
+19:47:41 INFO TalentoTech - Verificando precio del producto en el carrito.
+19:47:41 INFO TalentoTech - Precio del producto en el carrito: $29.99
+19:47:41 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Backpack
+19:47:44 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Bike Light
+19:47:44 INFO TalentoTech - Instanciando la página de inventario.
+19:47:44 INFO TalentoTech - Agregando 'Sauce Labs Bike Light' al carrito.
+19:47:45 INFO TalentoTech - Verificando contador del carrito.
+19:47:45 INFO TalentoTech - Navegando al carrito de compras.
+19:47:45 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+19:47:45 INFO TalentoTech - Verificando título del carrito.
+19:47:45 INFO TalentoTech - Obteniendo productos en el carrito.
+19:47:45 INFO TalentoTech - El carrito contiene 1 productos.
+19:47:45 INFO TalentoTech - Verificando nombre del producto en el carrito.
+19:47:45 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Bike Light
+19:47:45 INFO TalentoTech - Verificando precio del producto en el carrito.
+19:47:45 INFO TalentoTech - Precio del producto en el carrito: $9.99
+19:47:45 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Bike Light

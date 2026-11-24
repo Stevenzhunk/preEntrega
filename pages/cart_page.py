@@ -41,3 +41,8 @@ class CartPage:
             )
         )
         boton.click()
+        
+    def obtener_precio_producto(self, producto):
+        return producto.find_element(
+            By.CLASS_NAME, "inventory_item_price"
+        ).text
