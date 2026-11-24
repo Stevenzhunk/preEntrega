@@ -1,0 +1,33 @@
+19:07:34 INFO talentolab - El carrito en su web tiene 1 productos.
+19:07:34 INFO talentolab - El primer producto en la pagina del carrito es: Sauce Labs Backpack
+19:09:34 INFO talentolab - El carrito en su web tiene 1 productos.
+19:09:34 INFO talentolab - El primer producto en la pagina del carrito es: Sauce Labs Backpack
+19:10:42 INFO talentolab - El carrito en su web tiene 1 productos.
+19:10:42 INFO talentolab - El primer producto en la pagina del carrito es: Sauce Labs Backpack
+19:10:46 INFO talentolab - El primer producto del catalogo es: Sauce Labs Backpack
+19:10:46 INFO talentolab - El precio del primer producto es: $29.99
+19:19:19 INFO talentolab - Iniciando prueba de carrito.
+19:19:20 INFO talentolab - Instanciando la página de inventario.
+19:19:20 INFO talentolab - Obteniendo nombre del primer producto del inventario.
+19:19:20 INFO talentolab - Agregando el primer producto 'Sauce Labs Backpack' al carrito.
+19:19:20 INFO talentolab - Verificando que el contador del carrito sea '1'.
+19:19:20 INFO talentolab - Navegando al carrito de compras.
+19:19:20 INFO talentolab - Instanciando la página del carrito.
+19:19:20 INFO talentolab - Verificando que la URL sea 'https://www.saucedemo.com/cart.html'.
+19:19:20 INFO talentolab - Verificando que el título de la página del carrito sea 'Your Cart'.
+19:19:21 INFO talentolab - Obteniendo productos en el carrito.
+19:19:21 INFO talentolab - El carrito en su web tiene 1 productos.
+19:19:21 INFO talentolab - Obteniendo nombre del primer producto en la página del carrito.
+19:19:21 INFO talentolab - El primer producto en la pagina del carrito es: Sauce Labs Backpack
+19:19:21 INFO talentolab - Verificando que el nombre del producto en el carrito coincida con el nombre del primer producto del inventario.
+19:19:23 INFO talentolab - Iniciando prueba de inventario.
+19:19:23 INFO talentolab - Iniciando sesión con usuario estándar.
+19:19:24 INFO talentolab - Instanciando la página de inventario.
+19:19:24 INFO talentolab - Obteniendo nombre y precio del primer producto del inventario.
+19:19:24 INFO talentolab - Verificando que el título de la página sea 'Swag Labs' y que haya productos en el inventario.
+19:19:24 INFO talentolab - Se encontraron 6 productos en el inventario.
+19:19:24 INFO talentolab - El primer producto del catalogo es: Sauce Labs Backpack
+19:19:24 INFO talentolab - El precio del primer producto es: $29.99
+19:19:27 INFO talentolab - Iniciando prueba de login exitoso.
+19:19:27 INFO talentolab - Iniciando sesión con usuario estándar.
+19:19:27 INFO talentolab - Verificando que la URL contenga '/inventory.html'.

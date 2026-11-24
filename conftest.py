@@ -1,3 +1,4 @@
+
 import pytest
 from selenium import webdriver
 import pytest_html
@@ -7,7 +8,16 @@ import base64
 
 @pytest.fixture(scope="function")
 def driver():
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument("--incognito")
+    options.add_argument("--disable-notifications")
+
+    options.add_experimental_option("prefs", {
+        "credentials_enable_service": False,
+        "profile.password_manager_enabled": False
+    })
+
+    driver = webdriver.Chrome(options=options)
     driver.maximize_window()
 
     yield driver

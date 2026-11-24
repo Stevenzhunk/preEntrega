@@ -6,52 +6,54 @@ from pages.cart_page import CartPage
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from utils.logger import logger
+
 
 def test_carrito(driver):
 
-    # Iniciar sesión
+    logger.info("Iniciando prueba de carrito.")
     login_page = LoginPage(driver)
     login_page.login_saucedemo("standard_user", "secret_sauce")
 
-    # Instanciar página de inventario
+    logger.info("Instanciando la página de inventario.")
     inventory_page = InventoryPage(driver)
 
-    # Obtener nombre del primer producto
+    logger.info("Obteniendo nombre del primer producto del inventario.")
     first_product_name = inventory_page.obtener_nombre_primer_producto()
 
-    # Agregar producto al carrito
+    logger.info(f"Agregando el primer producto '{first_product_name}' al carrito.")
     inventory_page.agregar_producto(first_product_name)
 
-    # Verificar contador del carrito
+    logger.info("Verificando que el contador del carrito sea '1'.")
     assert inventory_page.obtener_contador_carrito() == "1"
 
-    # Ir al carrito
+    logger.info("Navegando al carrito de compras.")
     inventory_page.ir_al_carrito()
 
-    # Instanciar página del carrito
+    logger.info("Instanciando la página del carrito.")
     cart_page = CartPage(driver)
 
-    # Verificar URL del carrito
+    logger.info("Verificando que la URL sea 'https://www.saucedemo.com/cart.html'.")    
     WebDriverWait(driver, 10).until(
         EC.url_to_be("https://www.saucedemo.com/cart.html")
     )
 
     assert driver.current_url == "https://www.saucedemo.com/cart.html"
 
-    # Verificar título del carrito
+    logger.info("Verificando que el título de la página del carrito sea 'Your Cart'.")
     assert cart_page.obtener_titulo() == "Your Cart"
 
-    # Obtener productos del carrito
+    logger.info("Obteniendo productos en el carrito.")
     cart_items = cart_page.obtener_productos_carrito()
 
-    print(f"El carrito en su web tiene {len(cart_items)} productos.")
+    logger.info(f"El carrito en su web tiene {len(cart_items)} productos.")
 
     assert cart_page.obtener_cantidad_productos() == 1
 
-    # Obtener nombre del producto en el carrito
+    logger.info("Obteniendo nombre del primer producto en la página del carrito.")
     cart_product_name = cart_page.obtener_nombre_producto(cart_items[0])
 
-    print("El primer producto en la pagina del carrito es:", cart_product_name)
+    logger.info(f"El primer producto en la pagina del carrito es: {cart_product_name}")
 
-    # Verificar que sea el mismo producto agregado
+    logger.info("Verificando que el nombre del producto en el carrito coincida con el nombre del primer producto del inventario.")
     assert cart_product_name == first_product_name
