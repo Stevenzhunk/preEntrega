@@ -3,4 +3,3 @@ standard_user,secret_sauce,exitoso
 usuario_invalido,1234,error
 usuario_inexistente,123456,error
 locked_out_user,secret_sauce,bloqueado
-usuario_prueba,secret_sauce,exitoso

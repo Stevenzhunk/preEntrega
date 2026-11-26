@@ -1,10 +1,12 @@
 
 import pytest
+from requests import options
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 import pytest_html
 import pathlib
 import base64
+import os
 
 
 @pytest.fixture(scope="function")
@@ -12,11 +14,19 @@ def driver():
     options = webdriver.ChromeOptions()
     options.add_argument("--incognito")
     options.add_argument("--disable-notifications")
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
 
     options.add_experimental_option("prefs", {
         "credentials_enable_service": False,
         "profile.password_manager_enabled": False
     })
+
+    if os.getenv("CI"):
+        options.add_argument("--headless=new")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
 
     driver = webdriver.Chrome(options=options)
     driver.maximize_window()
