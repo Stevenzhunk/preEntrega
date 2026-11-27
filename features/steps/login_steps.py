@@ -34,11 +34,15 @@ def step_click_login(context):
 @then('deberia ingresar al inventario')
 def step_verificar_inventario(context):
 
-    WebDriverWait(context.driver, 10).until(
+    WebDriverWait(context.driver, 15).until(
         EC.url_contains("/inventory.html")
     )
 
-    assert "/inventory.html" in context.driver.current_url
+    WebDriverWait(context.driver, 15).until(
+        EC.presence_of_element_located(
+            (By.CLASS_NAME, "inventory_item")
+        )
+    )
 
     productos = context.driver.find_elements(
         By.CLASS_NAME, "inventory_item"
