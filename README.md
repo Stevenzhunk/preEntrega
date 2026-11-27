@@ -249,12 +249,6 @@ Para ejecutar los escenarios BDD del archivo de login:
 python -m behave features/login.feature
 ```
 
-Para visualizar la salida detallada de los pasos:
-
-```bash
-python -m behave features/login.feature --no-capture
-```
-
 Los escenarios están definidos en archivos `.feature` utilizando sintaxis Gherkin y se vinculan con las funciones implementadas en `features/steps/`.
 
 ---
@@ -368,11 +362,12 @@ Los reportes generados se almacenan como artefactos descargables, permitiendo re
 
 Las pruebas están organizadas mediante los siguientes marcadores:
 
-| Marker      | Descripción                                                   |
-| ----------- | ------------------------------------------------------------- |
-| `login`     | Automatización del inicio de sesión y verificación de la URL. |
-| `catalogo`  | Navegación y verificación del catálogo.                       |
-| `productos` | Interacción con productos y carrito de compras.               |
+| Marker      | Descripción                                                                          |
+| ----------- | ------------------------------------------------------------------------------------ |
+| `login`     | Automatización del inicio de sesión y verificación de la URL.                        |
+| `catalogo`  | Navegación y verificación del catálogo.                                              |
+| `productos` | Interacción con productos y carrito de compras.                                      |
+| `api`       | Pruebas de endpoints HTTP mediante solicitudes GET, POST y DELETE a JSONPlaceholder. |
 
 Para consultar los marcadores disponibles:
 

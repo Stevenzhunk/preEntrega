@@ -8,7 +8,7 @@ from utils.logger import logger
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
+@pytest.mark.login
 @pytest.mark.parametrize("data", read_users_csv())
 def test_login(driver, data):
 

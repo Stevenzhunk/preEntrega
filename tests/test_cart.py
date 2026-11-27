@@ -12,6 +12,7 @@ from utils.logger import logger
 from utils.reader import read_productos_json
 
 
+@pytest.mark.productos
 @pytest.mark.parametrize("producto", read_productos_json())
 def test_carrito(driver, producto):
 

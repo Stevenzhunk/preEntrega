@@ -1,0 +1,20 @@
+21:37:57 INFO TalentoTech - Iniciando prueba de login para: standard_user
+21:37:57 INFO TalentoTech - Abriendo la página de login.
+21:37:57 INFO TalentoTech - Credenciales enviadas correctamente.
+21:37:57 INFO TalentoTech - Verificando acceso al inventario.
+21:37:57 INFO TalentoTech - Login exitoso.
+21:38:00 INFO TalentoTech - Iniciando prueba de login para: usuario_invalido
+21:38:00 INFO TalentoTech - Abriendo la página de login.
+21:38:00 INFO TalentoTech - Credenciales enviadas correctamente.
+21:38:00 INFO TalentoTech - Verificando mensaje de error.
+21:38:00 INFO TalentoTech - Credenciales inválidas validadas correctamente.
+21:38:03 INFO TalentoTech - Iniciando prueba de login para: usuario_inexistente
+21:38:03 INFO TalentoTech - Abriendo la página de login.
+21:38:03 INFO TalentoTech - Credenciales enviadas correctamente.
+21:38:03 INFO TalentoTech - Verificando mensaje de error.
+21:38:03 INFO TalentoTech - Credenciales inválidas validadas correctamente.
+21:38:06 INFO TalentoTech - Iniciando prueba de login para: locked_out_user
+21:38:06 INFO TalentoTech - Abriendo la página de login.
+21:38:06 INFO TalentoTech - Credenciales enviadas correctamente.
+21:38:06 INFO TalentoTech - Verificando mensaje de error.
+21:38:06 INFO TalentoTech - Usuario bloqueado validado correctamente.

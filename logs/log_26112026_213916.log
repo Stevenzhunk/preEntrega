@@ -1,0 +1,28 @@
+21:39:16 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Backpack
+21:39:16 INFO TalentoTech - Instanciando la página de inventario.
+21:39:16 INFO TalentoTech - Agregando 'Sauce Labs Backpack' del JSON al carrito.
+21:39:17 INFO TalentoTech - Verificando contador del carrito.
+21:39:17 INFO TalentoTech - Navegando al carrito de compras.
+21:39:17 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+21:39:17 INFO TalentoTech - Verificando título del carrito.
+21:39:18 INFO TalentoTech - Obteniendo productos en el carrito.
+21:39:18 INFO TalentoTech - El carrito contiene 1 productos.
+21:39:18 INFO TalentoTech - Verificando nombre del producto en el carrito.
+21:39:18 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Backpack
+21:39:18 INFO TalentoTech - Verificando precio del producto en el carrito.
+21:39:18 INFO TalentoTech - Precio del producto en el carrito: $29.99
+21:39:18 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Backpack
+21:39:20 INFO TalentoTech - Iniciando prueba de carrito para: Sauce Labs Bike Light
+21:39:21 INFO TalentoTech - Instanciando la página de inventario.
+21:39:21 INFO TalentoTech - Agregando 'Sauce Labs Bike Light' del JSON al carrito.
+21:39:21 INFO TalentoTech - Verificando contador del carrito.
+21:39:21 INFO TalentoTech - Navegando al carrito de compras.
+21:39:21 INFO TalentoTech - Esperando a que la URL del carrito sea correcta.
+21:39:21 INFO TalentoTech - Verificando título del carrito.
+21:39:21 INFO TalentoTech - Obteniendo productos en el carrito.
+21:39:21 INFO TalentoTech - El carrito contiene 1 productos.
+21:39:21 INFO TalentoTech - Verificando nombre del producto en el carrito.
+21:39:21 INFO TalentoTech - Producto encontrado en el carrito: Sauce Labs Bike Light
+21:39:21 INFO TalentoTech - Verificando precio del producto en el carrito.
+21:39:21 INFO TalentoTech - Precio del producto en el carrito: $9.99
+21:39:21 INFO TalentoTech - Prueba de carrito finalizada correctamente para: Sauce Labs Bike Light

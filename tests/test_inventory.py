@@ -1,9 +1,10 @@
+import pytest
 
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from utils.logger import logger
 
-
+@pytest.mark.catalogo
 def test_inventory(driver):
 
     logger.info("Iniciando prueba de inventario.")
