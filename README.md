@@ -47,6 +47,19 @@ Se verifica:
 - Existencia de los productos agregados.
 - Comparación entre los productos seleccionados y los mostrados en el carrito.
 
+### 🌐 Automatización de pruebas API
+
+Se implementan pruebas automatizadas sobre la API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/), utilizando la librería Requests.
+
+Se verifican los siguientes escenarios:
+
+- Consulta de publicaciones mediante solicitudes GET.
+- Creación de publicaciones mediante solicitudes POST.
+- Eliminación de publicaciones mediante solicitudes DELETE.
+- Consulta de publicaciones inexistentes.
+- Validación de códigos de estado HTTP.
+- Verificación de los datos devueltos en las respuestas JSON.
+
 ### 🥒 Pruebas BDD con Behave
 
 Se implementan escenarios utilizando el enfoque **Behavior Driven Development (BDD)** y sintaxis Gherkin.
@@ -71,6 +84,7 @@ Se contemplan:
 | Behave             | Framework BDD para ejecutar escenarios Gherkin.                           |
 | pytest-html        | Generación de reportes HTML.                                              |
 | Requests           | Cliente HTTP para pruebas de API, si corresponde a la suite implementada. |
+| JSONPlaceholder    | API REST pública utilizada como entorno de pruebas..                      |
 | Git / GitHub       | Control de versiones y alojamiento del proyecto.                          |
 | GitHub Actions     | Integración continua y ejecución automática de pruebas.                   |
 
@@ -79,7 +93,7 @@ Se contemplan:
 ## 📁 Estructura del proyecto
 
 ```text
-ProyectoFinalQaAutomation/
+proyecto-final-automation-testing-luis-becerra/
 │
 ├── .github/
 │   └── workflows/
@@ -110,7 +124,8 @@ ProyectoFinalQaAutomation/
 │   ├── __init__.py
 │   ├── test_login.py
 │   ├── test_inventory.py
-│   └── test_cart.py
+│   ├── test_cart.py
+│   └── test_api.py
 │
 ├── utils/
 │   ├── __init__.py
@@ -159,13 +174,13 @@ python --version
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/Stevenzhunk/ProyectoFinalQaAutomation.git
+git clone https://github.com/Stevenzhunk/proyecto-final-automation-testing-luis-becerra.git
 ```
 
 Ingresar a la carpeta:
 
 ```bash
-cd ProyectoFinalQaAutomation
+cd proyecto-final-automation-testing-luis-becerra
 ```
 
 ### 2. Crear un entorno virtual
@@ -241,6 +256,33 @@ python -m behave features/login.feature --no-capture
 ```
 
 Los escenarios están definidos en archivos `.feature` utilizando sintaxis Gherkin y se vinculan con las funciones implementadas en `features/steps/`.
+
+---
+
+## 🌐 Ejecución de pruebas API
+
+Para ejecutar las pruebas automatizadas sobre JSONPlaceholder:
+
+```bash
+python -m pytest -s tests/test_api.py
+```
+
+Estas pruebas permiten verificar el comportamiento de diferentes métodos HTTP:
+
+| Método HTTP | Operación                              | Resultado esperado |
+| ----------- | -------------------------------------- | ------------------ |
+| GET         | Consultar una publicación.             | HTTP 200           |
+| POST        | Crear una publicación.                 | HTTP 201           |
+| DELETE      | Eliminar una publicación.              | HTTP 200           |
+| GET         | Consultar una publicación inexistente. | HTTP 404           |
+
+Para generar un reporte HTML independiente de las pruebas API:
+
+```bash
+python -m pytest tests/test_api.py --html=reports/reporte_api.html --self-contained-html
+```
+
+**Nota:** JSONPlaceholder es una API de prueba que simula las operaciones de escritura. Las solicitudes POST y DELETE no modifican permanentemente sus datos.
 
 ---
 
@@ -355,4 +397,4 @@ python -m pytest --markers
 
 ## 🔗 Repositorio
 
-[ProyectoFinalQaAutomation - GitHub](https://github.com/Stevenzhunk/ProyectoFinalQaAutomation)
+[proyecto-final-automation-testing-luis-becerra](https://github.com/Stevenzhunk/proyecto-final-automation-testing-luis-becerra)
