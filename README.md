@@ -1,16 +1,18 @@
-# 🧪 Automatización de Pruebas - SauceDemo
+# 🧪 Proyecto Final - QA Automation | SauceDemo
 
-Proyecto de **QA Automation** desarrollado para automatizar pruebas funcionales sobre la aplicación web **SauceDemo**.
+Proyecto de **QA Automation** desarrollado para automatizar pruebas funcionales sobre la aplicación web [SauceDemo](https://www.saucedemo.com/).
 
-El proyecto utiliza **Python, Pytest y Selenium WebDriver** para validar diferentes funcionalidades de la aplicación mediante pruebas automatizadas ejecutadas en **Google Chrome**.
+El proyecto utiliza **Python, Pytest, Selenium WebDriver y Behave** para validar funcionalidades de la aplicación mediante pruebas automatizadas de interfaz gráfica (UI), aplicando buenas prácticas de organización, reutilización de código y diseño de escenarios BDD.
+
+También incorpora integración continua mediante **GitHub Actions**, permitiendo ejecutar las pruebas automáticamente ante cambios en el repositorio.
 
 ---
 
 ## 🎯 Propósito del proyecto
 
-El objetivo es automatizar diferentes escenarios funcionales de SauceDemo, aplicando herramientas y buenas prácticas de automatización de pruebas.
+El objetivo es automatizar diferentes escenarios funcionales de SauceDemo, verificando el comportamiento de sus principales funcionalidades y aplicando herramientas utilizadas en procesos de aseguramiento de calidad de software.
 
-Las pruebas están organizadas en tres grupos principales correspondientes a la pre-entrega.
+Las pruebas se organizan en los siguientes módulos:
 
 ### 🔐 Automatización de Login
 
@@ -19,7 +21,10 @@ Se verifica:
 - Acceso a la página de SauceDemo.
 - Ingreso de usuario y contraseña.
 - Inicio de sesión exitoso.
-- Redirección correcta a la página del catálogo.
+- Redirección correcta al inventario.
+- Validación de credenciales incorrectas.
+- Validación de usuarios bloqueados.
+- Validación de campos vacíos.
 
 ### 📋 Navegación y verificación del catálogo
 
@@ -30,175 +35,296 @@ Se verifica:
 - Filtros del catálogo.
 - Existencia de productos disponibles.
 
-### 🛒 Interacción con productos
+### 🛒 Interacción con productos y carrito
 
 Se verifica:
 
-- Identificación del primer producto del catálogo.
-- Obtención del nombre y precio del producto.
-- Agregado del primer producto al carrito.
-- Incremento del contador del carrito.
-- Navegación hacia la página del carrito.
-- Existencia del producto dentro del carrito.
-- Comparación entre el producto agregado y el producto mostrado en el carrito.
+- Identificación de productos del catálogo.
+- Obtención de nombres y precios.
+- Agregado de productos al carrito.
+- Actualización del contador del carrito.
+- Navegación hacia el carrito.
+- Existencia de los productos agregados.
+- Comparación entre los productos seleccionados y los mostrados en el carrito.
+
+### 🥒 Pruebas BDD con Behave
+
+Se implementan escenarios utilizando el enfoque **Behavior Driven Development (BDD)** y sintaxis Gherkin.
+
+Se contemplan:
+
+- Inicio de sesión exitoso.
+- Login con credenciales incorrectas.
+- Validación de usuarios bloqueados.
+- Validación de campos vacíos.
 
 ---
 
 ## 🛠️ Tecnologías utilizadas
 
-| Tecnología         | Utilización                                      |
-| ------------------ | ------------------------------------------------ |
-| Python 3.12        | Lenguaje utilizado para desarrollar las pruebas. |
-| Pytest             | Framework para crear y ejecutar las pruebas.     |
-| Selenium WebDriver | Automatización e interacción con el navegador.   |
-| Google Chrome      | Navegador utilizado para ejecutar las pruebas.   |
-| pytest-html        | Generación de reportes HTML.                     |
-| Git                | Control de versiones.                            |
+| Tecnología         | Utilización                                                               |
+| ------------------ | ------------------------------------------------------------------------- |
+| Python 3.12        | Lenguaje utilizado para desarrollar las pruebas.                          |
+| Pytest             | Framework para organizar y ejecutar pruebas automatizadas.                |
+| Selenium WebDriver | Automatización e interacción con el navegador.                            |
+| Google Chrome      | Navegador utilizado para las pruebas UI.                                  |
+| Behave             | Framework BDD para ejecutar escenarios Gherkin.                           |
+| pytest-html        | Generación de reportes HTML.                                              |
+| Requests           | Cliente HTTP para pruebas de API, si corresponde a la suite implementada. |
+| Git / GitHub       | Control de versiones y alojamiento del proyecto.                          |
+| GitHub Actions     | Integración continua y ejecución automática de pruebas.                   |
 
 ---
 
-## 📦 Dependencias
+## 📁 Estructura del proyecto
 
-El proyecto utiliza las siguientes dependencias de Python:
+```text
+ProyectoFinalQaAutomation/
+│
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+│
+├── data/
+│   ├── users.csv
+│   └── products.json
+│
+├── features/
+│   ├── steps/
+│   │   └── login_steps.py
+│   ├── environment.py
+│   └── login.feature
+│
+├── logs/
+│
+├── pages/
+│   ├── __init__.py
+│   ├── login_page.py
+│   ├── inventory_page.py
+│   └── cart_page.py
+│
+├── reports/
+│   └── screenshots/
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_login.py
+│   ├── test_inventory.py
+│   └── test_cart.py
+│
+├── utils/
+│   ├── __init__.py
+│   ├── logger.py
+│   └── reader.py
+│
+├── conftest.py
+├── pytest.ini
+├── behave.ini
+├── requirements.txt
+└── README.md
+```
 
-- `pytest`
-- `selenium`
-- `pytest-html`
+### Descripción de las carpetas
+
+- **data/**: almacena los datos utilizados para las pruebas, como credenciales y productos.
+- **features/**: contiene los escenarios BDD escritos en Gherkin y sus correspondientes steps.
+- **pages/**: implementa el patrón Page Object Model (POM), centralizando los elementos y acciones de cada página.
+- **tests/**: contiene los casos de prueba automatizados con Pytest.
+- **utils/**: reúne funciones reutilizables, como lectura de archivos y registro de logs.
+- **reports/**: almacena los reportes generados y las capturas de pantalla de pruebas fallidas.
+- **logs/**: almacena los registros de ejecución.
+- **.github/workflows/**: contiene la configuración del pipeline de integración continua.
 
 ---
 
-## 🚀 Instalación y configuración
-
-### 1. Requisitos previos
+## 📦 Requisitos previos
 
 Antes de ejecutar el proyecto, es necesario tener instalado:
 
-- **Python 3.12 o superior.**
-- **Google Chrome**, navegador utilizado para ejecutar las pruebas.
-- **Git**, si el proyecto se obtiene mediante un repositorio.
+- Python 3.12 o superior.
+- Google Chrome.
+- Git.
+- Visual Studio Code (opcional, recomendado para trabajar con el proyecto).
 
-Para verificar que Python está instalado correctamente, ejecutar:
+Para verificar Python:
 
 ```bash
 python --version
 ```
 
-El resultado esperado será similar a:
+---
 
-```text
-Python 3.12.10
-```
+## 🚀 Instalación y configuración
 
-### 2. Instalar las dependencias
-
-Con el entorno virtual activado, instalar las dependencias necesarias:
+### 1. Clonar el repositorio
 
 ```bash
-pip install pytest selenium pytest-html
+git clone https://github.com/Stevenzhunk/ProyectoFinalQaAutomation.git
 ```
 
-También es posible instalarlas por separado:
+Ingresar a la carpeta:
 
 ```bash
-pip install pytest
+cd ProyectoFinalQaAutomation
 ```
+
+### 2. Crear un entorno virtual
 
 ```bash
-pip install selenium
+python -m venv venv
 ```
+
+Activar el entorno virtual en Windows PowerShell:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+### 3. Instalar las dependencias
+
+Con el entorno virtual activado:
 
 ```bash
-pip install pytest-html
+python -m pip install -r requirements.txt
 ```
 
-Para verificar que Pytest está instalado correctamente:
-
-```bash
-pytest --version
-```
-
-Para consultar la instalación de Selenium:
-
-```bash
-pip show selenium
-```
-
-Para consultar la instalación de pytest-html:
-
-```bash
-pip show pytest-html
-```
+El archivo `requirements.txt` contiene las dependencias necesarias para ejecutar el proyecto.
 
 ---
 
-## ▶️ Ejecución de las pruebas
+## ▶️ Ejecución de las pruebas con Pytest
 
-Para ejecutar las pruebas, ubicarse en la carpeta raíz `preEntrega`, donde se encuentra el archivo `pytest.ini`.
-
-Ejecutar el siguiente comando:
+Para ejecutar toda la suite de Pytest desde la carpeta raíz:
 
 ```bash
 python -m pytest -s
 ```
 
-El parámetro `-s` permite visualizar en la terminal los mensajes generados mediante `print()` durante la ejecución de las pruebas.
+El parámetro `-s` permite visualizar en la terminal los mensajes generados mediante `print()` durante la ejecución.
 
----
+### Ejecutar pruebas por módulo
 
-## 🔐 Ejecutar solamente las pruebas de Login
-
-Para ejecutar únicamente las pruebas identificadas con el marcador `login`:
+**Login:**
 
 ```bash
 python -m pytest -s -m login
 ```
 
-Esta prueba verifica:
-
-- Inicio de sesión exitoso.
-- Redirección a la URL correcta después del login.
-
----
-
-## 📋 Ejecutar solamente las pruebas del catálogo
-
-Para ejecutar únicamente las pruebas relacionadas con el catálogo:
+**Catálogo:**
 
 ```bash
 python -m pytest -s -m catalogo
 ```
 
-Estas pruebas verifican:
-
-- Título de la aplicación.
-- Menú hamburguesa.
-- Filtros del catálogo.
-- Disponibilidad de productos.
-
----
-
-## 🛒 Ejecutar solamente las pruebas de productos
-
-Para ejecutar únicamente las pruebas de interacción con productos:
+**Productos y carrito:**
 
 ```bash
 python -m pytest -s -m productos
 ```
 
-Estas pruebas verifican:
+Los marcadores permiten ejecutar grupos específicos de pruebas sin necesidad de ejecutar toda la suite.
 
-- Identificación del primer producto del catálogo.
-- Obtención del nombre y precio.
-- Agregado del producto al carrito.
-- Actualización del contador del carrito.
-- Presencia del producto dentro del carrito.
-- Coincidencia entre el producto agregado y el producto mostrado en el carrito.
+---
+
+## 🥒 Ejecución de pruebas BDD con Behave
+
+Para ejecutar los escenarios BDD del archivo de login:
+
+```bash
+python -m behave features/login.feature
+```
+
+Para visualizar la salida detallada de los pasos:
+
+```bash
+python -m behave features/login.feature --no-capture
+```
+
+Los escenarios están definidos en archivos `.feature` utilizando sintaxis Gherkin y se vinculan con las funciones implementadas en `features/steps/`.
+
+---
+
+## 📊 Reportes de ejecución
+
+### Reporte HTML de Pytest
+
+Al ejecutar la suite de Pytest, se genera automáticamente un reporte HTML en:
+
+```text
+reports/reporte.html
+```
+
+El reporte permite consultar:
+
+- Cantidad de pruebas ejecutadas.
+- Pruebas aprobadas y fallidas.
+- Tiempo de ejecución.
+- Detalle de errores.
+- Información adicional de cada prueba.
+
+Para generar un reporte independiente:
+
+```bash
+python -m pytest -s --html=reports/reporte_api.html --self-contained-html
+```
+
+### Capturas de pantalla
+
+Cuando una prueba de interfaz gráfica falla, el proyecto captura automáticamente una imagen del navegador.
+
+Las capturas se almacenan en:
+
+```text
+reports/screenshots/
+```
+
+Estas imágenes permiten analizar visualmente el estado de la aplicación al momento del fallo.
+
+### Logs
+
+Los registros de ejecución se almacenan en:
+
+```text
+logs/
+```
+
+Permiten consultar información sobre la ejecución y facilitar el diagnóstico de errores.
+
+### Reporte JSON de Behave
+
+En la ejecución configurada para GitHub Actions se genera un reporte JSON:
+
+```text
+reports/behave-report.json
+```
+
+Este archivo contiene información estructurada sobre los escenarios, pasos y resultados de las pruebas BDD.
+
+---
+
+## ⚙️ Integración continua - GitHub Actions
+
+El proyecto incorpora un workflow de GitHub Actions que permite ejecutar las pruebas automáticamente cuando se realiza un `push` o un `pull request` hacia la rama `main`.
+
+El pipeline contempla:
+
+1. Descarga del repositorio.
+2. Configuración del entorno Python.
+3. Instalación de Google Chrome.
+4. Instalación de dependencias.
+5. Ejecución de las pruebas automatizadas con Pytest.
+6. Ejecución de escenarios BDD con Behave.
+7. Generación y almacenamiento de reportes como artefactos.
+
+Los resultados pueden consultarse desde la pestaña **Actions** del repositorio de GitHub.
+
+Los reportes generados se almacenan como artefactos descargables, permitiendo revisar los resultados de cada ejecución incluso después de finalizar el workflow.
 
 ---
 
 ## 🏷️ Pytest Marks
 
-Las pruebas están organizadas mediante los siguientes marcadores (_markers_):
+Las pruebas están organizadas mediante los siguientes marcadores:
 
 | Marker      | Descripción                                                   |
 | ----------- | ------------------------------------------------------------- |
@@ -206,9 +332,7 @@ Las pruebas están organizadas mediante los siguientes marcadores (_markers_):
 | `catalogo`  | Navegación y verificación del catálogo.                       |
 | `productos` | Interacción con productos y carrito de compras.               |
 
-Los markers permiten ejecutar grupos específicos de pruebas sin necesidad de ejecutar toda la suite.
-
-Para visualizar los marcadores disponibles:
+Para consultar los marcadores disponibles:
 
 ```bash
 python -m pytest --markers
@@ -216,16 +340,19 @@ python -m pytest --markers
 
 ---
 
-Ejemplo de espera explícita:
+## 🧩 Buenas prácticas aplicadas
 
-```python
-WebDriverWait(browser, 10).until(
-    EC.presence_of_element_located((By.CLASS_NAME, "cart_item"))
-)
-```
-
-Esta espera permite que Selenium aguarde hasta un máximo de 10 segundos para que el elemento indicado esté presente en el DOM antes de continuar con la prueba.
-
-El uso de esperas explícitas ayuda a reducir errores ocasionados por diferencias en los tiempos de carga de la aplicación y evita depender exclusivamente de pausas fijas mediante `time.sleep()`.
+- Page Object Model (POM).
+- Separación entre datos, lógica de pruebas y elementos de interfaz.
+- Reutilización de funciones y métodos.
+- Uso de esperas explícitas con WebDriverWait.
+- Parametrización de pruebas.
+- Organización de escenarios BDD con Gherkin.
+- Registro de logs y capturas ante fallos.
+- Integración continua mediante GitHub Actions.
 
 ---
+
+## 🔗 Repositorio
+
+[ProyectoFinalQaAutomation - GitHub](https://github.com/Stevenzhunk/ProyectoFinalQaAutomation)
